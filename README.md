@@ -1,7 +1,7 @@
 docker-tsdns
 ============
 
-A TSDNS Server in the Docker Container
+A TSDNS server in a docker container.
 
 ## Getting Started
 1. First clone this repo
