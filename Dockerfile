@@ -13,6 +13,7 @@ RUN wget "http://dl.4players.de/ts/releases/$TS_VERSION/teamspeak3-server_linux-
     ; rm teamspeak3-server_linux-amd64-${TS_VERSION}.tar.gz
 
 WORKDIR /opt/teamspeak/tsdns
+
 RUN mv tsdns_settings.ini.sample tsdns_settings.ini
 
 ENTRYPOINT ["./tsdnsserver_linux_amd64"]
