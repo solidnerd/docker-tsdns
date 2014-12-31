@@ -8,6 +8,9 @@ A TSDNS server in a docker container.
 2. Build the Dockerfile ``` docker build --tag="[repoName]/tsdns" .```
 3. Start the container ``` docker run -d -p 41144:41144 --name tsdns [repoName]/tsdns ```
 
+```[repoName]``` replace it with your favourite repository name. 
+
+
 ## Add/Edit TSDNS Entries
 Run a second Docker Process in the container via:
 ```
