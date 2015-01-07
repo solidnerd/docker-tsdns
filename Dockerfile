@@ -9,12 +9,10 @@ RUN apt-get update && apt-get install wget vim -y
 RUN wget "http://dl.4players.de/ts/releases/$TS_VERSION/teamspeak3-server_linux-amd64-$TS_VERSION.tar.gz" \
     -O teamspeak3-server_linux-amd64-$TS_VERSION.tar.gz \
     ; tar -zxf teamspeak3-server_linux-amd64-${TS_VERSION}.tar.gz \
-    ; mv teamspeak3-server_linux-amd64 /opt/teamspeak \
-    ; rm teamspeak3-server_linux-amd64-${TS_VERSION}.tar.gz
+    ; mv teamspeak3-server_linux-amd64/tsdns /opt/tsdns \
+    ; rm teamspeak3-server_linux-amd64-${TS_VERSION}.tar.gz && rm -r teamspeak3-server_linux-amd64
 
-WORKDIR /opt/teamspeak/tsdns
-
-RUN mv tsdns_settings.ini.sample tsdns_settings.ini
+WORKDIR /opt/tsdns
 
 ENTRYPOINT ["./tsdnsserver_linux_amd64"]
 
