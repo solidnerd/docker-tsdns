@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:wheezy
 
 MAINTAINER Niclas Mietz <docker@mietz.io>
 
