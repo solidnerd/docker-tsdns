@@ -4,6 +4,8 @@ MAINTAINER Niclas Mietz <github@mietz.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV TS_VERSION 3.0.13
+
 ENV   TS_VERSION 3.0.13
 ENV   TS_FILENAME teamspeak3-server_linux_amd64
 ENV   TSDNS_HOME /opt/tsdns
