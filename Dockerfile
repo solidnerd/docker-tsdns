@@ -3,7 +3,7 @@ FROM debian:jessie
 MAINTAINER Niclas Mietz <github@mietz.io>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV TS_VERSION 3.0.11.3
+ENV TS_VERSION 3.0.13
 
 RUN apt-get update && apt-get install wget -y
 RUN wget "http://dl.4players.de/ts/releases/${TS_VERSION}/teamspeak3-server_linux-amd64-${TS_VERSION}.tar.gz" \

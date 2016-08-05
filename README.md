@@ -3,7 +3,7 @@ docker-tsdns
 
 A TSDNS server in a docker container.
 
-## Current Version: [3.0.11.3](https://github.com/SolidNerd/docker-tsdns/blob/master/Dockerfile)
+## Current Version: [3.0.13](https://github.com/SolidNerd/docker-tsdns/blob/master/Dockerfile)
 
 ## Getting Started
 1. First clone this repo or pull it from the registry.
