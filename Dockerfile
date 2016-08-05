@@ -1,6 +1,6 @@
-FROM debian:wheezy
+FROM debian:jessie
 
-MAINTAINER Niclas Mietz <docker@mietz.io>
+MAINTAINER Niclas Mietz <github@mietz.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TS_VERSION 3.0.11.3
