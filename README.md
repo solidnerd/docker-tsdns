@@ -1,7 +1,11 @@
+[![](https://images.microbadger.com/badges/image/solidnerd/tsdns.svg)](http://microbadger.com/images/solidnerd/tsdns "Get your own image badge on microbadger.com")
+
 docker-tsdns
 ============
 
 A TSDNS server in a docker container.
+
+
 
 ## Current Version: [3.0.13](https://github.com/SolidNerd/docker-tsdns/blob/master/Dockerfile)
 
