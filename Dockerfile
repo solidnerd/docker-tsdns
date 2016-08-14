@@ -1,24 +1,30 @@
-FROM debian:jessie
+FROM solidnerd/alpine-glibc:2.23-r3
 
 MAINTAINER Niclas Mietz <github@mietz.io>
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV   TS_VERSION=3.0.13 \
+      TS_FILENAME=teamspeak3-server_linux_amd64 \
+      TSDNS_USER=tsdns \
+      TSDNS_HOME=/tsdns \
+      TSDNS_UID=1000 \
+      TSDNS_GID=1000
 
-ENV TS_VERSION 3.0.13
+RUN addgroup -S $TSDNS_USER -g ${TSDNS_GID} \
+      && adduser -S  \
+        -g $TSDNS_USER \
+        -h $TSDNS_HOME \
+        -u ${TSDNS_UID} \
+        $TSDNS_USER
 
-ENV   TS_VERSION 3.0.13
-ENV   TS_FILENAME teamspeak3-server_linux_amd64
-ENV   TSDNS_HOME /opt/tsdns
-
-
-RUN apt-get update && apt-get install wget mysql-common bzip2 -y \
-      && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+RUN apk add --no-cache wget mysql-client bzip2  \
       && wget "http://dl.4players.de/ts/releases/${TS_VERSION}/${TS_FILENAME}-${TS_VERSION}.tar.bz2" -O ${TS_FILENAME}-${TS_VERSION}.tar.bz2 \
       && tar -xjf "${TS_FILENAME}-${TS_VERSION}.tar.bz2" \
       && rm ${TS_FILENAME}-${TS_VERSION}.tar.bz2 \
-      && mv ${TS_FILENAME}/tsdns ${TSDNS_HOME} \
-      && rm -r ${TS_FILENAME} \
-      && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+      && mkdir -p ${TSDNS_HOME} \
+      && mv ${TS_FILENAME}/tsdns/* ${TSDNS_HOME} \
+      && rm -r ${TS_FILENAME}
+
+USER  ${TSDNS_USER}
 
 WORKDIR ${TSDNS_HOME}
 
