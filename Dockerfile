@@ -5,7 +5,7 @@ MAINTAINER Niclas Mietz <github@mietz.io>
 ENV   TS_VERSION=3.0.13 \
       TS_FILENAME=teamspeak3-server_linux_amd64 \
       TSDNS_USER=tsdns \
-      TSDNS_HOME=/opt/tsdns \
+      TSDNS_HOME=/tsdns \
       TSDNS_UID=1000 \
       TSDNS_GID=1000
 
@@ -24,7 +24,7 @@ RUN apk add --no-cache wget mysql-client bzip2  \
       && mv ${TS_FILENAME}/tsdns/* ${TSDNS_HOME} \
       && rm -r ${TS_FILENAME}
 
-USER    ${TSDNS_USER}
+USER  ${TSDNS_USER}
 
 WORKDIR ${TSDNS_HOME}
 
