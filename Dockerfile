@@ -2,7 +2,7 @@ FROM solidnerd/alpine-glibc:2.23-r3
 
 MAINTAINER Niclas Mietz <github@mietz.io>
 
-ENV   TS_VERSION=3.0.13.4 \
+ENV   TS_VERSION=3.0.13.5 \
       TS_FILENAME=teamspeak3-server_linux_amd64 \
       TSDNS_USER=tsdns \
       TSDNS_HOME=/tsdns \
