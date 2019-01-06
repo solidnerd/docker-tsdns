@@ -1,4 +1,4 @@
-FROM solidnerd/alpine-glibc:2.23-r3
+FROM frolvlad/alpine-glibc:alpine-3.8
 
 LABEL maintainer="Niclas Mietz <github@mietz.io>"
 
