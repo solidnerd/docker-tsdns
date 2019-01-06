@@ -5,13 +5,13 @@ docker-tsdns
 
 A TSDNS server in a container. This image should help to setup a TSDNS server for teamspeak servers.
 
-# Current Version: [3.0.13.6](https://github.com/SolidNerd/docker-tsdns/blob/master/Dockerfile)
+# Current Version: [3.5.1](https://github.com/SolidNerd/docker-tsdns/blob/master/Dockerfile)
 
 # Getting Started
 
 1. Copy the `tsdns_settings.ini.sample` to add your host with
 ```
-docker run --rm --entrypoint="/bin/sh" solidnerd/tsdns:3.0.13.6 -c "cat tsdns_settings.ini.sample" > tsdns_settings.ini
+docker run --rm --entrypoint="/bin/sh" solidnerd/tsdns:3.5.1 -c "cat tsdns_settings.ini.sample" > tsdns_settings.ini
 ```
 2. Add your entries in `tsdns_settings.ini`
 ```
@@ -20,7 +20,7 @@ public.teamspeak.com=12.13.14.15:10000
 
 3. Start the container
 ```
-docker run -d -p 41144:41144 -v tsdns_settings.ini:/tsdns/tsdns_settings.ini:ro --name tsdns solidnerd/tsdns:3.0.13.6
+docker run -d -p 41144:41144 -v tsdns_settings.ini:/tsdns/tsdns_settings.ini:ro --name tsdns solidnerd/tsdns:3.5.1
 ```
 
 # Update TSDNS Entries
